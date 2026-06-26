@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="Application Premium de Numérologie - Méthode Pythagoricienne">
+    <meta name="author" content="Numérologie APP Mada">
+    <meta name="theme-color" content="#6C5CE7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <title>Numérologie APP Mada V2</title>
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%236C5CE7'>9</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%236C5CE7'>9</text></svg>">
+    <style>
+:root {
+    --primary-color: #6C5CE7;
+    --primary-light: #A29BFE;
+    --primary-dark: #5546C8;
+    --secondary-color: #FDCB6E;
+    --accent-color: #E17055;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8F9FA;
+    --bg-tertiary: #E9ECEF;
+    --bg-glass: rgba(255, 255, 255, 0.7);
+    --text-primary: #2D3436;
+    --text-secondary: #636E72;
+    --text-tertiary: #B2BEC3;
+    --text-inverse: #FFFFFF;
+    --success-color: #00B894;
+    --warning-color: #FDCB6E;
+    --error-color: #D63031;
+    --info-color: #0984E3;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16);
+    --border-color: #DFE6E9;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 24px;
+    --border-radius-full: 9999px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-3xl: 32px;
+    --font-size-4xl: 40px;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal-backdrop: 400;
+    --z-modal: 500;
+    --z-toast: 600;
+    --z-tooltip: 700;
+    --header-height: 64px;
+    --bottom-nav-height: 64px;
+    --sidebar-width: 280px;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1E1E2E;
+    --bg-secondary: #2A2A3E;
+    --bg-tertiary: #363650;
+    --bg-glass: rgba(30, 30, 46, 0.7);
+    --text-primary: #FFFFFF;
+    --text-secondary: #B2BEC3;
+    --text-tertiary: #636E72;
+    --text-inverse: #2D3436;
+    --border-color: #363650;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+}
+
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+}
+
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
+
+p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--bg-primary);
+    transition: background-color var(--transition-base);
+}
+
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-lg);
+    z-index: var(--z-fixed);
+    transition: all var(--transition-base);
+}
+
+.btn-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-md);
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+}
+
+.btn-menu:hover, .btn-menu:active {
+    background-color: var(--bg-secondary);
+}
+
+.app-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.btn-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-md);
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+}
+
+.btn-icon:hover, .btn-icon:active {
+    background-color: var(--bg-secondary);
+}
+
+.icon-moon.hidden, .icon-sun.hidden {
+    display: none;
+}
+
+.lang-badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--text-inverse);
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+    padding: 2px 4px;
+    border-radius: 4px;
+    line-height: 1;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    z-index: var(--z-modal);
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+}
+
+.sidebar.active .sidebar-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-content {
+    position: relative;
+    width: var(--sidebar-width);
+    height: 100%;
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-xl);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: var(--z-modal);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-close-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-md);
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+}
+
+.btn-close-sidebar:hover, .btn-close-sidebar:active {
+    background-color: var(--bg-secondary);
+}
+
+.sidebar-menu {
+    flex: 1;
+    padding: var(--spacing-md);
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
+    transition: all var(--transition-base);
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+}
+
+.menu-item:hover {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.menu-item.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--text-inverse);
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.menu-badge {
+    margin-left: auto;
+    background-color: var(--accent-color);
+    color: var(--text-inverse);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    padding: 2px 8px;
+    border-radius: var(--border-radius-full);
+    line-height: 1.5;
+}
+
+.menu-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: var(--spacing-md) 0;
+}
+
+.main-content {
+    flex: 1;
+    margin-top: var(--header-height);
+    margin-bottom: var(--bottom-nav-height);
+    padding: var(--spacing-lg);
+    background-color: var(--bg-secondary);
+    transition: all var(--transition-base);
+    overflow-y: auto;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--bottom-nav-height);
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: var(--z-fixed);
+    padding: 0 var(--spacing-sm);
+    transition: all var(--transition-base);
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    color: var(--text-secondary);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    transition: all var(--transition-base);
+    flex: 1;
+    max-width: 120px;
+    border-radius: var(--border-radius-md);
+}
+
+.bottom-nav-item svg {
+    width: 24px;
+    height: 24px;
+}
+
+.bottom-nav-item.active {
+    color: var(--primary-color);
+    background-color: var(--bg-secondary);
+}
+
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-slow);
+}
+
+.splash-screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.splash-content {
+    text-align: center;
+    color: var(--text-inverse);
+}
+
+.splash-logo {
+    margin-bottom: var(--spacing-xl);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.splash-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-inverse);
+}
+
+.splash-subtitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2xl);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.splash-loader {
+    width: 200px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius-full);
+    overflow: hidden;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.loader-bar {
+    height: 100%;
+    background-color: var(--text-inverse);
+    border-radius: var(--border-radius-full);
+    animation: loading 2s ease-in-out infinite;
+}
+
+.splash-version {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.card {
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-base);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.glass {
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.toast-container {
+    position: fixed;
+    top: calc(var(--header-height) + var(--spacing-md));
+    right: var(--spacing-md);
+    z-index: var(--z-toast);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    pointer-events: none;
+}
+
+.toast {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    min-width: 300px;
+    max-width: 500px;
+    pointer-events: auto;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.toast.success {
+    border-left: 4px solid var(--success-color);
+}
+
+.toast.error {
+    border-left: 4px solid var(--error-color);
+}
+
+.toast.warning {
+    border-left: 4px solid var(--warning-color);
+}
+
+.toast.info {
+    border-left: 4px solid var(--info-color);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    font-weight: var(--font-weight-medium);
+    transition: all var(--transition-base);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--text-inverse);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--text-inverse);
+}
+
+.btn-large {
+    padding: var(--spacing-lg) var(--spacing-2xl);
+    font-size: var(--font-size-lg);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
+}
+
+.form-input, .form-textarea, .form-select {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.home-header {
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+.home-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+}
+
+.quick-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+    justify-content: center;
+}
+
+.recent-section {
+    margin-top: var(--spacing-2xl);
+}
+
+.analyses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.analysis-card {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.analysis-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.analysis-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.analysis-info h3 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.analysis-info p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.analysis-date {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+.analysis-form {
+    max-width: 600px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+    color: var(--text-secondary);
+}
+
+.analyses-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.analysis-item {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.analysis-item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.analysis-item-info h3 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.analysis-item-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.number-card {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--text-inverse);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.number-value {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-sm);
+}
+
+.number-label {
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.pythagore-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.grid-row {
+    display: contents;
+}
+
+.grid-cell {
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.grid-cell:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+}
+
+.grid-cell.empty {
+    background-color: var(--bg-secondary);
+    opacity: 0.5;
+}
+
+.grid-cell.normal {
+    border-color: var(--primary-color);
+}
+
+.grid-cell.strong {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--text-inverse);
+    border-color: var(--primary-color);
+}
+
+.grid-cell.excess {
+    background-color: var(--warning-color);
+    border-color: var(--warning-color);
+}
+
+.cell-number {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.cell-count {
+    font-size: var(--font-size-sm);
+    letter-spacing: 2px;
+}
+
+.cell-value {
+    font-size: var(--font-size-xs);
+    opacity: 0.7;
+}
+
+.analysis-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.analysis-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.business-result {
+    margin-top: var(--spacing-xl);
+}
+
+.business-numbers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.number-box {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--text-inverse);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.number-box .number {
+    display: block;
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-sm);
+}
+
+.number-box .label {
+    display: block;
+    font-size: var(--font-size-sm);
+}
+
+.business-interpretation h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.settings-section {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.settings-section:last-child {
+    border-bottom: none;
+}
+
+.setting-item {
+    margin-bottom: var(--spacing-lg);
+}
+
+.setting-item label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+.about-content {
+    text-align: center;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+}
+
+.about-content h2 {
+    margin-bottom: var(--spacing-lg);
+}
+
+.compatibility-card {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.compatibility-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.compatibility-type {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-top: var(--spacing-sm);
+}
+
+.compatibility-overall {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.overall-score {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.score-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-circle svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.score-text {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.score-value {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+}
+
+.score-emoji {
+    font-size: var(--font-size-3xl);
+}
+
+.overall-score.excellent .score-circle svg circle:last-of-type {
+    stroke: var(--success-color);
+}
+
+.overall-score.good .score-circle svg circle:last-of-type {
+    stroke: var(--info-color);
+}
+
+.overall-score.medium .score-circle svg circle:last-of-type {
+    stroke: var(--warning-color);
+}
+
+.overall-score.low .score-circle svg circle:last-of-type {
+    stroke: var(--error-color);
+}
+
+.compatibility-details {
+    margin-bottom: var(--spacing-lg);
+}
+
+.detail-item {
+    margin-bottom: var(--spacing-md);
+}
+
+.detail-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xs);
+    font-weight: var(--font-weight-medium);
+}
+
+.detail-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-full);
+    overflow: hidden;
+}
+
+.detail-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    transition: width var(--transition-base);
+}
+
+.detail-fill.excellent {
+    background: linear-gradient(90deg, var(--success-color), #00d48a);
+}
+
+.detail-fill.good {
+    background: linear-gradient(90deg, var(--info-color), #1ca3d4);
+}
+
+.detail-fill.medium {
+    background: linear-gradient(90deg, var(--warning-color), #fdb750);
+}
+
+.detail-fill.low {
+    background: linear-gradient(90deg, var(--error-color), #e85555);
+}
+
+.compatibility-strengths, .compatibility-weaknesses, .compatibility-advice {
+    margin-bottom: var(--spacing-lg);
+}
+
+.compatibility-strengths h3, .compatibility-weaknesses h3, .compatibility-advice h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.compatibility-strengths ul, .compatibility-weaknesses ul, .compatibility-advice ul {
+    list-style: none;
+}
+
+.compatibility-strengths li, .compatibility-weaknesses li, .compatibility-advice li {
+    padding: var(--spacing-sm) 0;
+    padding-left: var(--spacing-lg);
+    position: relative;
+    line-height: var(--line-height-relaxed);
+}
+
+.compatibility-strengths li::before, .compatibility-weaknesses li::before, .compatibility-advice li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.timeline-item {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid;
+    transition: all var(--transition-base);
+}
+
+.timeline-item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.timeline-item.compact {
+    padding: var(--spacing-md);
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.timeline-year {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+}
+
+.timeline-age {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.timeline-personal-year {
+    margin-left: auto;
+    color: var(--text-inverse);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+}
+
+.timeline-scores {
+    display: grid;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.score-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.score-label {
+    width: 100px;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+.score-bar {
+    flex: 1;
+    height: 8px;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-full);
+    overflow: hidden;
+}
+
+.score-fill {
+    height: 100%;
+    transition: width var(--transition-base);
+}
+
+.timeline-themes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.theme-tag {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+}
+
+.timeline-advice {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.report-document {
+    background: var(--bg-primary);
+    padding: var(--spacing-2xl);
+}
+
+.report-cover {
+    text-align: center;
+    padding: var(--spacing-3xl);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--text-inverse);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-3xl);
+}
+
+.report-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--text-inverse);
+    margin-bottom: var(--spacing-lg);
+}
+
+.report-main-title {
+    color: var(--text-inverse);
+    margin-bottom: var(--spacing-md);
+}
+
+.report-subtitle {
+    color: var(--text-inverse);
+    opacity: 0.9;
+    margin-bottom: var(--spacing-md);
+}
+
+.report-date {
+    color: var(--text-inverse);
+    opacity: 0.8;
+}
+
+.report-section {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.section-title {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-intro {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.key-numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.key-number-card {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--text-inverse);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.key-number-value {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-sm);
+}
+
+.key-number-label {
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
+    margin-bottom: var(--spacing-sm);
+}
+
+.key-number-desc {
+    font-size: var(--font-size-xs);
+    opacity: 0.8;
+}
+
+.number-detail {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.number-detail h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.number-detail h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.pythagore-interpretation {
+    margin-top: var(--spacing-lg);
+}
+
+.pythagore-interpretation h3 {
+    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.pythagore-interpretation ul {
+    list-style: none;
+}
+
+.pythagore-interpretation li {
+    padding: var(--spacing-sm) 0;
+    padding-left: var(--spacing-lg);
+    position: relative;
+}
+
+.pythagore-interpretation li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.report-quote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.report-footer {
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-tertiary);
+    font-size: var(--font-size-sm);
+}
+
+.conclusion-summary {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(400%);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@media (min-width: 768px) {
+    .bottom-nav {
+        display: none;
+    }
+    .main-content {
+        margin-bottom: 0;
+    }
+    .btn-menu {
+        display: none;
+    }
+    .sidebar {
+        transform: translateX(0);
+        position: relative;
+        width: var(--sidebar-width);
+    }
+    .sidebar-overlay {
+        display: none;
+    }
+    .app-container {
+        flex-direction: row;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    :root {
+        --header-height: 56px;
+        --sidebar-width: 280px;
+    }
+    .app-title {
+        font-size: var(--font-size-base);
+    }
+    h1 {
+        font-size: var(--font-size-2xl);
+    }
+    h2 {
+        font-size: var(--font-size-xl);
+    }
+    h3 {
+        font-size: var(--font-size-lg);
+    }
+    .grid-cols-2, .grid-cols-3, .grid-cols-4 {
+        grid-template-columns: 1fr;
+    }
+    .analyses-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-actions {
+        flex-direction: column;
+    }
+    .analysis-header {
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+<body>
+    <div id="splashScreen" class="splash-screen active">
+        <div class="splash-content">
+            <div class="splash-logo">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="55" stroke="url(#gradient1)" stroke-width="3"/>
+                    <path d="M60 20 L80 50 L100 50 L70 70 L80 100 L60 85 L40 100 L50 70 L20 50 L40 50 Z" fill="url(#gradient2)"/>
+                    <defs>
+                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6C5CE7;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#A29BFE;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FDCB6E;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#E17055;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <h1 class="splash-title" data-i18n="app_name">Numérologie APP Mada</h1>
+            <p class="splash-subtitle" data-i18n="app_subtitle">Découvrez votre chemin de vie</p>
+            <div class="splash-loader"><div class="loader-bar"></div></div>
+            <p class="splash-version">Version 2.0.0</p>
+        </div>
+    </div>
+
+    <div id="app" class="app-container">
+        <header class="app-header">
+            <button class="btn-menu" id="btnMenu" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <h1 class="app-title" data-i18n="app_name">Numérologie APP Mada</h1>
+            <div class="header-actions">
+                <button class="btn-icon" id="btnTheme" aria-label="Changer le thème">
+                    <svg class="icon-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="btn-icon" id="btnLanguage" aria-label="Changer la langue">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span class="lang-badge" id="langBadge">FR</span>
+                </button>
+            </div>
+        </header>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-overlay" id="sidebarOverlay"></div>
+            <nav class="sidebar-content">
+                <div class="sidebar-header">
+                    <div class="sidebar-logo">
+                        <svg width="40" height="40" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="60" cy="60" r="55" stroke="url(#gradient1)" stroke-width="3"/>
+                            <path d="M60 20 L80 50 L100 50 L70 70 L80 100 L60 85 L40 100 L50 70 L20 50 L40 50 Z" fill="url(#gradient2)"/>
+                        </svg>
+                    </div>
+                    <button class="btn-close-sidebar" id="btnCloseSidebar" aria-label="Fermer le menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="menu-item active" data-page="home"><svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span data-i18n="menu_home">Accueil</span></a></li>
+                    <li><a href="#" class="menu-item" data-page="new-analysis"><svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg><span data-i18n="menu_new_analysis">Nouvelle analyse</span></a></li>
+                    <li><a href="#" class="menu-item" data-page="history"><svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span data-i18n="menu_history">Historique</span><span class="menu-badge" id="historyCount">0</span></a></li>
+                    <li><a href="#" class="menu-item" data-page="favorites"><svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span data-i18n="menu_favorites">Favoris</span><span class="menu-badge" id="favoritesCount">0</span></a></li>
+                    <li class="menu-divider"></li>
+                    <li><a href="#" class="menu-item" data-page="business"><svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg><span data-i18n="menu_business">Analyse entreprise</span></a></li>
+                    <li><a href="#" class="menu-item" data-page="compatibility"><svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg><span data-i18n="menu_compatibility">Compatibilité</span></a></li>
+                    <li><a href="#" class="menu-item" data-page="timeline"><svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"></line><circle cx="12" cy="6" r="3"></circle><circle cx="12" cy="12" r="3"></circle><circle cx="12" cy="18" r="3"></circle></svg><span data-i18n="menu_timeline">Chronologie</span></a></li>
+                    <li><a href="#" class="menu-item" data-page="reports"><svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span data-i18n="menu_reports">Rapports</span></a></li>
+                    <li class="menu-divider"></li>
+                    <li><a href="#" class="menu-item" data-page="settings"><svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6m0 6v6m5.66-13.66l-4.24 4.24m-2.83 2.83l-4.24 4.24M23 12h-6m-6 0H1m18.36 5.64l-4.24-4.24m-2.83-2.83l-4.24-4.24"></path></svg><span data-i18n="menu_settings">Paramètres</span></a></li>
+                    <li><a href="#" class="menu-item" data-page="about"><svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg><span data-i18n="menu_about">À propos</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content" id="mainContent"></main>
+
+        <nav class="bottom-nav" id="bottomNav">
+            <a href="#" class="bottom-nav-item active" data-page="home"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><span data-i18n="menu_home">Accueil</span></a>
+            <a href="#" class="bottom-nav-item" data-page="new-analysis"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg><span data-i18n="btn_new">Nouveau</span></a>
+            <a href="#" class="bottom-nav-item" data-page="history"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span data-i18n="menu_history">Historique</span></a>
+            <a href="#" class="bottom-nav-item" data-page="settings"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6m0 6v6m5.66-13.66l-4.24 4.24m-2.83 2.83l-4.24 4.24M23 12h-6m-6 0H1m18.36 5.64l-4.24-4.24m-2.83-2.83l-4.24-4.24"></path></svg><span data-i18n="menu_settings">Paramètres</span></a>
+        </nav>
+    </div>
+
+    <div id="modalContainer"></div>
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script>
+const Utils = (() => {
+    'use strict';
+    function generateUUID() { return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { const r = Math.random() * 16 | 0; const v = c === 'x' ? r : (r & 0x3 | 0x8); return v.toString(16); }); }
+    function formatDate(date, format = 'DD/MM/YYYY') { const d = new Date(date); if (isNaN(d.getTime())) return ''; const day = String(d.getDate()).padStart(2, '0'); const month = String(d.getMonth() + 1).padStart(2, '0'); const year = d.getFullYear(); const hours = String(d.getHours()).padStart(2, '0'); const minutes = String(d.getMinutes()).padStart(2, '0'); const seconds = String(d.getSeconds()).padStart(2, '0'); return format.replace('DD', day).replace('MM', month).replace('YYYY', year).replace('HH', hours).replace('mm', minutes).replace('ss', seconds); }
+    function debounce(func, wait = 300) { let timeout; return function executedFunction(...args) { const later = () => { clearTimeout(timeout); func(...args); }; clearTimeout(timeout); timeout = setTimeout(later, wait); }; }
+    function deepClone(obj) { if (obj === null || typeof obj !== 'object') return obj; if (obj instanceof Date) return new Date(obj.getTime()); if (obj instanceof Array) return obj.map(item => deepClone(item)); if (obj instanceof Object) { const clonedObj = {}; for (const key in obj) { if (obj.hasOwnProperty(key)) { clonedObj[key] = deepClone(obj[key]); } } return clonedObj; } }
+    function cleanString(str) { if (!str) return ''; return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z\s]/g, '').toUpperCase().trim(); }
+    function capitalize(str) { if (!str) return ''; return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase(); }
+    function capitalizeWords(str) { if (!str) return ''; return str.split(' ').map(word => capitalize(word)).join(' '); }
+    function slugify(str) { return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''); }
+    function truncate(text, maxLength = 50, suffix = '...') { if (!text || text.length <= maxLength) return text; return text.substring(0, maxLength - suffix.length) + suffix; }
+    function formatNumber(num) { return new Intl.NumberFormat('fr-FR').format(num); }
+    function shuffle Array(array) { const shuffled = [...array]; for (let i = shuffled.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]; } return shuffled; }
+    function unique(array) { return [...new Set(array)]; }
+    function sortBy(array, key, order = 'asc') { return array.sort((a, b) => { if (a[key] < b[key]) return order === 'asc' ? -1 : 1; if (a[key] > b[key]) return order === 'asc' ? 1 : -1; return 0; }); }
+    function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+    async function copyToClipboard(text) { try { if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(text); return true; } else { const textArea = document.createElement('textarea'); textArea.value = text; textArea.style.position = 'fixed'; textArea.style.left = '-999999px'; textArea.style.top = '-999999px'; document.body.appendChild(textArea); textArea.focus(); textArea.select(); const result = document.execCommand('copy'); textArea.remove(); return result; } } catch (error) { console.error('Erreur lors de la copie:', error); return false; } }
+    function isMobile() { return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
+    function isAndroid() { return /Android/.test(navigator.userAgent); }
+    function calculateAge(birthDate) { const birth = new Date(birthDate); const today = new Date(); let age = today.getFullYear() - birth.getFullYear(); const monthDiff = today.getMonth() - birth.getMonth(); if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) { age--; } return age; }
+    function downloadFile(content, filename, mimeType = 'text/plain') { const blob = new Blob([content], { type: mimeType }); const url = URL.createObjectURL(blob); const link = document.createElement('a'); link.href = url; link.download = filename; document.body.appendChild(link); link.click(); document.body.removeChild(link); URL.revokeObjectURL(url); }
+    async function readFile(file, readAs = 'text') { return new Promise((resolve, reject) => { const reader = new FileReader(); reader.onload = (e) => resolve(e.target.result); reader.onerror = (e) => reject(e); if (readAs === 'dataURL') { reader.readAsDataURL(file); } else if (readAs === 'arrayBuffer') { reader.readAsArrayBuffer(file); } else { reader.readAsText(file); } }); }
+    return { generateUUID, formatDate, debounce, deepClone, cleanString, capitalize, capitalizeWords, slugify, truncate, formatNumber, shuffleArray: shuffleArray, unique, sortBy, sleep, copyToClipboard, isMobile, isAndroid, calculateAge, downloadFile, readFile };
+})();
+
+const Translations = (() => {
+    'use strict';
+    let currentLanguage = 'fr';
+    const translations = {
+        fr: {
+            app_name: 'Numérologie APP Mada',
+            app_subtitle: 'Découvrez votre chemin de vie',
+            menu_home: 'Accueil',
+            menu_new_analysis: 'Nouvelle analyse',
+            menu_history: 'Historique',
+            menu_favorites: 'Favoris',
+            menu_business: 'Analyse entreprise',
+            menu_compatibility: 'Compatibilité',
+            menu_timeline: 'Chronologie',
+            menu_reports: 'Rapports',
+            menu_settings: 'Paramètres',
+            menu_about: 'À propos',
+            btn_new: 'Nouveau',
+            btn_save: 'Enregistrer',
+            btn_cancel: 'Annuler',
+            btn_delete: 'Supprimer',
+            btn_edit: 'Modifier',
+            btn_export: 'Exporter',
+            btn_calculate: 'Calculer',
+            btn_analyze: 'Analyser',
+            form_title: 'Nouvelle analyse',
+            form_photo: 'Photo',
+            form_full_name: 'Nom complet',
+            form_birth_name: 'Nom de naissance',
+            form_birth_date: 'Date de naissance',
+            form_birth_time: 'Heure de naissance',
+            form_birth_place: 'Lieu de naissance',
+            form_gender: 'Genre',
+            form_gender_male: 'Homme',
+            form_gender_female: 'Femme',
+            form_gender_other: 'Autre',
+            form_comments: 'Commentaires',
+            number_life_path: 'Chemin de vie',
+            number_expression: 'Expression',
+            number_soul: 'Âme',
+            number_personality: 'Personnalité',
+            number_maturity: 'Maturité',
+            msg_loading: 'Chargement...',
+            msg_saving: 'Enregistrement...',
+            msg_saved: 'Enregistré avec succès',
+            msg_error: 'Une erreur est survenue',
+            msg_delete_confirm: 'Êtes-vous sûr de vouloir supprimer ?',
+            msg_no_data: 'Aucune donnée disponible',
+            msg_empty_history: 'Aucune analyse enregistrée',
+            msg_empty_favorites: 'Aucun favori',
+            msg_health_warning: 'Cette analyse est uniquement destinée au développement personnel et ne remplace pas un avis médical professionnel.',
+        },
+        mg: {
+            app_name: 'Numérologie APP Mada',
+            app_subtitle: 'Fantaro ny làlan\'ny fiainanao',
+            menu_home: 'Fandraisana',
+            menu_new_analysis: 'Famakafakana vaovao',
+            menu_history: 'Tantara',
+            menu_favorites: 'Tiana',
+            menu_business: 'Famakafakana orinasa',
+            menu_compatibility: 'Fifamoana',
+            menu_timeline: 'Fandaharam-potoana',
+            menu_reports: 'Tatitra',
+            menu_settings: 'Fandrindrana',
+            menu_about: 'Momba',
+            btn_new: 'Vaovao',
+            btn_save: 'Tehirizo',
+            btn_cancel: 'Aoka ihany',
+            btn_delete: 'Mamafa',
+            btn_edit: 'Ovay',
+            btn_export: 'Avoaka',
+            btn_calculate: 'Kajy',
+            btn_analyze: 'Fantaro',
+            form_title: 'Famakafakana vaovao',
+            form_photo: 'Sary',
+            form_full_name: 'Anarana feno',
+            form_birth_name: 'Anarana nahaterahana',
+            form_birth_date: 'Daty nahaterahana',
+            form_birth_time: 'Ora nahaterahana',
+            form_birth_place: 'Toerana nahaterahana',
+            form_gender: 'Lahy na vavy',
+            form_gender_male: 'Lahy',
+            form_gender_female: 'Vavy',
+            form_gender_other: 'Hafa',
+            form_comments: 'Fanamarihana',
+            number_life_path: 'Làlan\'ny fiainana',
+            number_expression: 'Fanehoana',
+            number_soul: 'Fanahy',
+            number_personality: 'Toetra',
+            number_maturity: 'Fahamatorana',
+            msg_loading: 'Mamaky...',
+            msg_saving: 'Mitahiry...',
+            msg_saved: 'Voatahiry soa aman-tsara',
+            msg_error: 'Nisy olana nitranga',
+            msg_delete_confirm: 'Tena hofafana ve?',
+            msg_no_data: 'Tsy misy angona',
+            msg_empty_history: 'Tsy misy famakafakana voatahiry',
+            msg_empty_favorites: 'Tsy misy tiana',
+            msg_health_warning: 'Ity famakafakana ity dia natao ho an\'ny fampivoarana manokana ihany ary tsy misolo ny torohevitra ara-pitsaboana.',
+        }
+    };
+    function init() { const savedLang = localStorage.getItem('app_language'); const browserLang = navigator.language.split('-')[0]; if (savedLang && translations[savedLang]) { currentLanguage = savedLang; } else if (translations[browserLang]) { currentLanguage = browserLang; } applyTranslations(); updateLanguageBadge(); }
+    function setLanguage(lang) { if (!translations[lang]) { console.error(`Langue non supportée: ${lang}`); return; } currentLanguage = lang; localStorage.setItem('app_language', lang); applyTranslations(); updateLanguageBadge(); document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } })); }
+    function getLanguage() { return currentLanguage; }
+    function get(key, params = {}) { let translation = translations[currentLanguage][key] || translations['fr'][key] || key; Object.keys(params).forEach(param => { translation = translation.replace(new RegExp(`{${param}}`, 'g'), params[param]); }); return translation; }
+    function applyTranslations() { document.querySelectorAll('[data-i18n]').forEach(element => { const key = element.getAttribute('data-i18n'); const translation = get(key); if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') { element.placeholder = translation; } else { element.textContent = translation; } }); document.documentElement.lang = currentLanguage; }
+    function updateLanguageBadge() { const badge = document.getElementById('langBadge'); if (badge) { badge.textContent = currentLanguage.toUpperCase(); } }
+    function toggleLanguage() { const languages = Object.keys(translations); const currentIndex = languages.indexOf(currentLanguage); const nextIndex = (currentIndex + 1) % languages.length; setLanguage(languages[nextIndex]); }
+    return { init, setLanguage, getLanguage, get, applyTranslations, toggleLanguage };
+})();
+
+const Storage = (() => {
+    'use strict';
+    const STORAGE_KEYS = { ANALYSES: 'numerology_analyses', FAVORITES: 'numerology_favorites', SETTINGS: 'numerology_settings' };
+    function saveAnalysis(analysis) { try { const analyses = getAnalyses(); analysis.id = analysis.id || Utils.generateUUID(); analysis.createdAt = analysis.createdAt || new Date().toISOString(); analysis.updatedAt = new Date().toISOString(); const index = analyses.findIndex(a => a.id === analysis.id); if (index !== -1) { analyses[index] = analysis; } else { analyses.unshift(analysis); } localStorage.setItem(STORAGE_KEYS.ANALYSES, JSON.stringify(analyses)); return analysis; } catch (error) { console.error('Erreur lors de la sauvegarde:', error); throw error; } }
+    function getAnalyses() { try { const data = localStorage.getItem(STORAGE_KEYS.ANALYSES); return data ? JSON.parse(data) : []; } catch (error) { console.error('Erreur lors de la récupération:', error); return []; } }
+    function getAnalysisById(id) { const analyses = getAnalyses(); return analyses.find(a => a.id === id); }
+    function deleteAnalysis(id) { try { const analyses = getAnalyses(); const filtered = analyses.filter(a => a.id !== id); localStorage.setItem(STORAGE_KEYS.ANALYSES, JSON.stringify(filtered)); return true; } catch (error) { console.error('Erreur lors de la suppression:', error); return false; } }
+    function searchAnalyses(query) { const analyses = getAnalyses(); const lowerQuery = query.toLowerCase(); return analyses.filter(a => a.fullName?.toLowerCase().includes(lowerQuery) || a.birthName?.toLowerCase().includes(lowerQuery) || a.birthPlace?.toLowerCase().includes(lowerQuery)); }
+    function addToFavorites(analysisId) { try { const favorites = getFavorites(); if (!favorites.includes(analysisId)) { favorites.push(analysisId); localStorage.setItem(STORAGE_KEYS.FAVORITES, JSON.stringify(favorites)); } return true; } catch (error) { console.error('Erreur lors de l\'ajout aux favoris:', error); return false; } }
+    function removeFromFavorites(analysisId) { try { const favorites = getFavorites(); const filtered = favorites.filter(id => id !== analysisId); localStorage.setItem(STORAGE_KEYS.FAVORITES, JSON.stringify(filtered)); return true; } catch (error) { console.error('Erreur lors du retrait des favoris:', error); return false; } }
+    function getFavorites() { try { const data = localStorage.getItem(STORAGE_KEYS.FAVORITES); return data ? JSON.parse(data) : []; } catch (error) { console.error('Erreur lors de la récupération des favoris:', error); return []; } }
+    function isFavorite(analysisId) { const favorites = getFavorites(); return favorites.includes(analysisId); }
+    function saveSettings(settings) { try { localStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(settings)); return true; } catch (error) { console.error('Erreur lors de la sauvegarde des paramètres:', error); return false; } }
+    function getSettings() { try { const data = localStorage.getItem(STORAGE_KEYS.SETTINGS); return data ? JSON.parse(data) : { theme: 'light', language: 'fr', fontSize: 'medium', animations: true, notifications: true }; } catch (error) { console.error('Erreur lors de la récupération des paramètres:', error); return {}; } }
+    function exportData() { try { const data = { analyses: getAnalyses(), favorites: getFavorites(), settings: getSettings(), exportDate: new Date().toISOString(), version: '2.0.0' }; return JSON.stringify(data, null, 2); } catch (error) { console.error('Erreur lors de l\'export:', error); throw error; } }
+    function importData(jsonData) { try { const data = JSON.parse(jsonData); if (data.analyses) { localStorage.setItem(STORAGE_KEYS.ANALYSES, JSON.stringify(data.analyses)); } if (data.favorites) { localStorage.setItem(STORAGE_KEYS.FAVORITES, JSON.stringify(data.favorites)); } if (data.settings) { localStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(data.settings)); } return true; } catch (error) { console.error('Erreur lors de l\'import:', error); return false; } }
+    function clearAllData() { try { Object.values(STORAGE_KEYS).forEach(key => { localStorage.removeItem(key); }); return true; } catch (error) { console.error('Erreur lors de la suppression des données:', error); return false; } }
+    function getStorageSize() { let total = 0; for (let key in localStorage) { if (localStorage.hasOwnProperty(key)) { total += localStorage[key].length + key.length; } } return (total / 1024).toFixed(2); }
+    return { saveAnalysis, getAnalyses, getAnalysisById, deleteAnalysis, searchAnalyses, addToFavorites, removeFromFavorites, getFavorites, isFavorite, saveSettings, getSettings, exportData, importData, clearAllData, getStorageSize };
+})();
+
+const NumerologyEngine = (() => {
+    'use strict';
+    const LETTER_VALUES = { 'A': 1, 'J': 1, 'S': 1, 'B': 2, 'K': 2, 'T': 2, 'C': 3, 'L': 3, 'U': 3, 'D': 4, 'M': 4, 'V': 4, 'E': 5, 'N': 5, 'W': 5, 'F': 6, 'O': 6, 'X': 6, 'G': 7, 'P': 7, 'Y': 7, 'H': 8, 'Q': 8, 'Z': 8, 'I': 9, 'R': 9 };
+    const VOWELS = ['A', 'E', 'I', 'O', 'U', 'Y'];
+    const MASTER_NUMBERS = [11, 22, 33, 44];
+    const KARMIC_DEBT_NUMBERS = [13, 14, 16, 19];
+
+    function calculateLetterValue(letter) { const upperLetter = letter.toUpperCase(); return LETTER_VALUES[upperLetter] || 0; }
+    function isVowel(letter) { return VOWELS.includes(letter.toUpperCase()); }
+    function reduceToSingleDigit(number, keepMasterNumbers = true) { while (number > 9) { if (keepMasterNumbers && MASTER_NUMBERS.includes(number)) { return number; } number = String(number).split('').reduce((sum, digit) => sum + parseInt(digit), 0); } return number; }
+    function calculateNameValue(name, options = {}) { const cleanName = Utils.cleanString(name); let total = 0; let details = []; for (let char of cleanName) { if (char !== ' ') { const value = calculateLetterValue(char); if (value > 0) { total += value; details.push({ letter: char, value: value }); } } } const reduced = reduceToSingleDigit(total, options.keepMasterNumbers !== false); return { total: total, reduced: reduced, details: details, isMasterNumber: MASTER_NUMBERS.includes(reduced) }; }
+    function calculateLifePath(birthDate) { const date = new Date(birthDate); const day = date.getDate(); const month = date.getMonth() + 1; const year = date.getFullYear(); const dayReduced = reduceToSingleDigit(day); const monthReduced = reduceToSingleDigit(month); const yearReduced = reduceToSingleDigit(year); const total = dayReduced + monthReduced + yearReduced; const lifePath = reduceToSingleDigit(total); return { number: lifePath, day: dayReduced, month: monthReduced, year: yearReduced, total: total, isMasterNumber: MASTER_NUMBERS.includes(lifePath) }; }
+    function calculateExpression(fullName) { return calculateNameValue(fullName); }
+    function calculateSoulUrge(fullName) { const cleanName = Utils.cleanString(fullName); let total = 0; let details = []; for (let char of cleanName) { if (char !== ' ' && isVowel(char)) { const value = calculateLetterValue(char); total += value; details.push({ letter: char, value: value }); } } const reduced = reduceToSingleDigit(total); return { total: total, reduced: reduced, details: details, isMasterNumber: MASTER_NUMBERS.includes(reduced) }; }
+    function calculatePersonality(fullName) { const cleanName = Utils.cleanString(fullName); let total = 0; let details = []; for (let char of cleanName) { if (char !== ' ' && !isVowel(char)) { const value = calculateLetterValue(char); total += value; details.push({ letter: char, value: value }); } } const reduced = reduceToSingleDigit(total); return { total: total, reduced: reduced, details: details, isMasterNumber: MASTER_NUMBERS.includes(reduced) }; }
+    function calculateMaturity(lifePath, expression) { const total = lifePath + expression; const maturity = reduceToSingleDigit(total); return { number: maturity, total: total, isMasterNumber: MASTER_NUMBERS.includes(maturity) }; }
+    function calculatePersonalYear(birthDate, year = new Date().getFullYear()) { const date = new Date(birthDate); const day = date.getDate(); const month = date.getMonth() + 1; const dayReduced = reduceToSingleDigit(day); const monthReduced = reduceToSingleDigit(month); const yearReduced = reduceToSingleDigit(year); const total = dayReduced + monthReduced + yearReduced; const personalYear = reduceToSingleDigit(total); return { number: personalYear, year: year, total: total }; }
+    function calculateCompleteAnalysis(data) { const { fullName, birthDate, birthName } = data; const lifePath = calculateLifePath(birthDate); const expression = calculateExpression(fullName); const soulUrge = calculateSoulUrge(fullName); const personality = calculatePersonality(fullName); const maturity = calculateMaturity(lifePath.number, expression.reduced); const personalYear = calculatePersonalYear(birthDate); return { lifePath, expression, soulUrge, personality, maturity, personalYear, fullName, birthDate, birthName }; }
+    function getNumberInterpretation(number, type = 'lifePath') { const interpretations = { lifePath: { 1: { title: 'Le Leader', description: 'Indépendance, leadership, innovation', traits: ['Ambitieux', 'Pionnier', 'Indépendant'] }, 2: { title: 'Le Diplomate', description: 'Coopération, équilibre, sensibilité', traits: ['Coopératif', 'Sensible', 'Pacifique'] }, 3: { title: 'Le Créateur', description: 'Expression, créativité, communication', traits: ['Créatif', 'Expressif', 'Sociable'] }, 4: { title: 'Le Bâtisseur', description: 'Stabilité, organisation, pragmatisme', traits: ['Stable', 'Organisé', 'Pratique'] }, 5: { title: 'Le Voyageur', description: 'Liberté, aventure, changement', traits: ['Libre', 'Aventureux', 'Adaptable'] }, 6: { title: 'Le Responsable', description: 'Harmonie, responsabilité, famille', traits: ['Responsable', 'Aimant', 'Protecteur'] }, 7: { title: 'Le Chercheur', description: 'Spiritualité, analyse, introspection', traits: ['Spirituel', 'Analytique', 'Sage'] }, 8: { title: 'Le Pouvoir', description: 'Pouvoir, réussite matérielle, autorité', traits: ['Ambitieux', 'Puissant', 'Réaliste'] }, 9: { title: 'L\'Humanitaire', description: 'Compassion, altruisme, universalité', traits: ['Compatissant', 'Généreux', 'Idéaliste'] }, 11: { title: 'Le Maître Inspirateur', description: 'Intuition, inspiration, illumination', traits: ['Intuitif', 'Inspirant', 'Visionnaire'] }, 22: { title: 'Le Maître Bâtisseur', description: 'Grands projets, réalisation matérielle', traits: ['Visionnaire', 'Pratique', 'Influent'] }, 33: { title: 'Le Maître Enseignant', description: 'Enseignement, guérison, compassion', traits: ['Enseignant', 'Guérisseur', 'Altruiste'] } } }; return interpretations[type][number] || { title: 'Nombre ' + number, description: 'À interpréter', traits: [] }; }
+    return { calculateLetterValue, calculateNameValue, calculateLifePath, calculateExpression, calculateSoulUrge, calculatePersonality, calculateMaturity, calculatePersonalYear, calculateCompleteAnalysis, getNumberInterpretation, reduceToSingleDigit };
+})();
+
+const Pythagore = (() => {
+    'use strict';
+    function createGrid(fullName, birthDate) { const cleanName = Utils.cleanString(fullName); const date = new Date(birthDate); const dateString = date.getDate().toString() + (date.getMonth() + 1).toString() + date.getFullYear().toString(); const grid = { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [], 9: [] }; for (let char of cleanName) { if (char !== ' ') { const value = NumerologyEngine.calculateLetterValue(char); if (value >= 1 && value <= 9) { grid[value].push(char); } } } for (let digit of dateString) { const num = parseInt(digit); if (num >= 1 && num <= 9) { grid[num].push(num.toString()); } } return grid; }
+    function analyzeGrid(grid) { const analysis = { presence: {}, absence: [], repetition: {}, excess: [], weakness: [], lines: {}, columns: {}, diagonals: {}, totalNumbers: 0 }; for (let i = 1; i <= 9; i++) { const count = grid[i].length; analysis.totalNumbers += count; if (count === 0) { analysis.absence.push(i); analysis.weakness.push(i); } else { analysis.presence[i] = count; if (count > 1) { analysis.repetition[i] = count; } if (count >= 4) { analysis.excess.push(i); } } } analysis.lines = { mental: grid[3].length + grid[6].length + grid[9].length, emotional: grid[2].length + grid[5].length + grid[8].length, practical: grid[1].length + grid[4].length + grid[7].length }; analysis.columns = { thought: grid[3].length + grid[2].length + grid[1].length, will: grid[6].length + grid[5].length + grid[4].length, action: grid[9].length + grid[8].length + grid[7].length }; analysis.diagonals = { determination: grid[1].length + grid[5].length + grid[9].length, sensitivity: grid[3].length + grid[5].length + grid[7].length }; return analysis; }
+    function generateReport(fullName, birthDate) { const grid = createGrid(fullName, birthDate); const analysis = analyzeGrid(grid); const report = { grid: grid, analysis: analysis, interpretations: { numbers: {}, lines: {}, columns: {}, diagonals: {} }, strengths: [], weaknesses: [], advice: [] }; for (let i = 1; i <= 9; i++) { const count = grid[i].length; if (count === 0) { report.weaknesses.push({ number: i, type: 'absence', message: `Le nombre ${i} est absent - travaillez sur cet aspect.` }); } else if (count >= 4) { report.weaknesses.push({ number: i, type: 'excess', message: `Le nombre ${i} est en excès - cherchez l'équilibre.` }); } else if (count === 2 || count === 3) { report.strengths.push({ number: i, type: 'strength', message: `Le nombre ${i} est une force - cultivez-la.` }); } } return report; }
+    function renderGridHTML(grid) { let html = '<div class="pythagore-grid">'; const positions = [[3, 6, 9], [2, 5, 8], [1, 4, 7]]; positions.forEach(row => { html += '<div class="grid-row">'; row.forEach(num => { const count = grid[num].length; const status = count === 0 ? 'empty' : count === 1 ? 'normal' : count === 2 ? 'strong' : count >= 3 ? 'excess' : ''; html += `<div class="grid-cell ${status}" data-number="${num}"><div class="cell-number">${num}</div><div class="cell-count">${count > 0 ? '●'.repeat(Math.min(count, 5)) : '○'}</div><div class="cell-value">${count}</div></div>`; }); html += '</div>'; }); html += '</div>'; return html; }
+    return { createGrid, analyzeGrid, generateReport, renderGridHTML };
+})();
+
+const App = (() => {
+    'use strict';
+    let currentPage = 'home';
+
+    function init() { console.log('🚀 Initialisation Numérologie APP Mada v2.0.0'); showSplashScreen(); setTimeout(() => { hideSplashScreen(); initializeApp(); }, 2500); }
+    function showSplashScreen() { const splash = document.getElementById('splashScreen'); if (splash) { splash.classList.add('active'); } }
+    function hideSplashScreen() { const splash = document.getElementById('splashScreen'); if (splash) { splash.classList.remove('active'); setTimeout(() => { splash.style.display = 'none'; }, 350); } }
+    function initializeApp() { Translations.init(); setupEventListeners(); loadPage('home'); updateCounts(); console.log('✅ Application initialisée avec succès'); }
+    function setupEventListeners() { const btnMenu = document.getElementById('btnMenu'); const btnCloseSidebar = document.getElementById('btnCloseSidebar'); const sidebarOverlay = document.getElementById('sidebarOverlay'); const btnTheme = document.getElementById('btnTheme'); const btnLanguage = document.getElementById('btnLanguage'); if (btnMenu) { btnMenu.addEventListener('click', toggleSidebar); } if (btnCloseSidebar) { btnCloseSidebar.addEventListener('click', closeSidebar); } if (sidebarOverlay) { sidebarOverlay.addEventListener('click', closeSidebar); } if (btnTheme) { btnTheme.addEventListener('click', () => { const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; document.documentElement.setAttribute('data-theme', theme); localStorage.setItem('theme', theme); updateThemeIcon(theme); }); } if (btnLanguage) { btnLanguage.addEventListener('click', () => Translations.toggleLanguage()); } document.querySelectorAll('.menu-item, .bottom-nav-item').forEach(item => { item.addEventListener('click', (e) => { e.preventDefault(); const page = item.getAttribute('data-page'); if (page) { loadPage(page); closeSidebar(); } }); }); }
+    function updateThemeIcon(theme) { const sunIcon = document.querySelector('.icon-sun'); const moonIcon = document.querySelector('.icon-moon'); if (sunIcon && moonIcon) { if (theme === 'dark') { sunIcon.classList.add('hidden'); moonIcon.classList.remove('hidden'); } else { sunIcon.classList.remove('hidden'); moonIcon.classList.add('hidden'); } } }
+    function toggleSidebar() { const sidebar = document.getElementById('sidebar'); if (sidebar) { sidebar.classList.toggle('active'); } }
+    function closeSidebar() { const sidebar = document.getElementById('sidebar'); if (sidebar) { sidebar.classList.remove('active'); } }
+    function loadPage(pageName) { currentPage = pageName; document.querySelectorAll('.menu-item, .bottom-nav-item').forEach(item => { item.classList.remove('active'); }); document.querySelectorAll(`[data-page="${pageName}"]`).forEach(item => { item.classList.add('active'); }); const mainContent = document.getElementById('mainContent'); if (!mainContent) return; let pageContent = ''; switch (pageName) { case 'home': pageContent = renderHomePage(); break; case 'new-analysis': pageContent = renderNewAnalysisPage(); break; case 'history': pageContent = renderHistoryPage(); break; case 'favorites': pageContent = renderFavoritesPage(); break; case 'business': pageContent = renderBusinessPage(); break; case 'compatibility': pageContent = renderCompatibilityPage(); break; case 'timeline': pageContent = renderTimelinePage(); break; case 'reports': pageContent = renderReportsPage(); break; case 'settings': pageContent = renderSettingsPage(); break; case 'about': pageContent = renderAboutPage(); break; default: pageContent = '<div class="container"><h2>Page non trouvée</h2></div>'; } mainContent.innerHTML = pageContent; mainContent.scrollTop = 0; initPageEvents(pageName); }
+    function renderHomePage() { const analyses = Storage.getAnalyses(); const recentAnalyses = analyses.slice(0, 3); return `<div class="container"><div class="home-header"><h1 data-i18n="menu_home">Accueil</h1><p class="home-subtitle">Bienvenue dans votre application de numérologie</p></div><div class="quick-actions"><button class="btn btn-primary btn-large" onclick="App.loadPage('new-analysis')"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg><span data-i18n="menu_new_analysis">Nouvelle analyse</span></button></div>${recentAnalyses.length > 0 ? `<div class="recent-section"><h2>Analyses récentes</h2><div class="analyses-grid">${recentAnalyses.map(a => `<div class="analysis-card" onclick="App.viewAnalysis('${a.id}')"><div class="analysis-info"><h3>${a.fullName}</h3><p>${Utils.formatDate(a.birthDate, 'DD/MM/YYYY')}</p><span class="analysis-date">${Utils.formatDate(a.createdAt, 'DD/MM/YYYY')}</span></div></div>`).join('')}</div></div>` : '<div class="empty-state"><p>Aucune analyse enregistrée. Commencez par créer votre première analyse !</p></div>'}</div>`; }
+    function renderNewAnalysisPage() { return `<div class="container"><h1 data-i18n="form_title">Nouvelle analyse</h1><form id="newAnalysisForm" class="analysis-form"><div class="form-group"><label class="form-label" data-i18n="form_full_name">Nom complet</label><input type="text" class="form-input" name="fullName" required placeholder="Jean Dupont"></div><div class="form-group"><label class="form-label" data-i18n="form_birth_date">Date de naissance</label><input type="date" class="form-input" name="birthDate" required></div><div class="form-group"><label class="form-label" data-i18n="form_birth_place">Lieu de naissance</label><input type="text" class="form-input" name="birthPlace" placeholder="Antananarivo"></div><div class="form-group"><label class="form-label" data-i18n="form_gender">Genre</label><select class="form-select" name="gender"><option value="male" data-i18n="form_gender_male">Homme</option><option value="female" data-i18n="form_gender_female">Femme</option><option value="other" data-i18n="form_gender_other">Autre</option></select></div><div class="form-group"><label class="form-label" data-i18n="form_comments">Commentaires</label><textarea class="form-textarea" name="comments" rows="4" placeholder="Notes personnelles..."></textarea></div><div class="form-actions"><button type="button" class="btn btn-secondary" onclick="App.loadPage('home')" data-i18n="btn_cancel">Annuler</button><button type="submit" class="btn btn-primary" data-i18n="btn_calculate">Calculer</button></div></form></div>`; }
+    function renderHistoryPage() { const analyses = Storage.getAnalyses(); return `<div class="container"><h1 data-i18n="menu_history">Historique</h1>${analyses.length > 0 ? `<div class="analyses-list">${analyses.map(a => `<div class="analysis-item" onclick="App.viewAnalysis('${a.id}')"><div class="analysis-item-info"><h3>${a.fullName}</h3><p>${Utils.formatDate(a.birthDate, 'DD/MM/YYYY')}</p></div><div class="analysis-item-actions"><button class="btn-icon" onclick="event.stopPropagation(); App.toggleFavorite('${a.id}')" title="Favori"><svg width="20" height="20" viewBox="0 0 24 24" fill="${Storage.isFavorite(a.id) ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></button><button class="btn-icon" onclick="event.stopPropagation(); App.deleteAnalysis('${a.id}')" title="Supprimer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button></div></div>`).join('')}</div>` : '<div class="empty-state"><p data-i18n="msg_empty_history">Aucune analyse enregistrée</p></div>'}</div>`; }
+    function renderFavoritesPage() { const favorites = Storage.getFavorites(); const analyses = favorites.map(id => Storage.getAnalysisById(id)).filter(a => a); return `<div class="container"><h1 data-i18n="menu_favorites">Favoris</h1>${analyses.length > 0 ? `<div class="analyses-grid">${analyses.map(a => `<div class="analysis-card" onclick="App.viewAnalysis('${a.id}')"><h3>${a.fullName}</h3><p>${Utils.formatDate(a.birthDate, 'DD/MM/YYYY')}</p></div>`).join('')}</div>` : '<div class="empty-state"><p data-i18n="msg_empty_favorites">Aucun favori</p></div>'}</div>`; }
+    function renderBusinessPage() { return `<div class="container"><h1 data-i18n="menu_business">Analyse entreprise</h1><p>Page en construction</p></div>`; }
+    function renderCompatibilityPage() { return `<div class="container"><h1 data-i18n="menu_compatibility">Compatibilité</h1><p>Page en construction</p></div>`; }
+    function renderTimelinePage() { return `<div class="container"><h1 data-i18n="menu_timeline">Chronologie</h1><p>Page en construction</p></div>`; }
+    function renderReportsPage() { return `<div class="container"><h1 data-i18n="menu_reports">Rapports</h1><p>Page en construction</p></div>`; }
+    function renderSettingsPage() { const settings = Storage.getSettings(); return `<div class="container"><h1 data-i18n="menu_settings">Paramètres</h1><div class="settings-section"><h2>Données</h2><button class="btn btn-secondary" onclick="App.exportData()">Exporter les données</button><button class="btn btn-secondary" onclick="App.importData()">Importer les données</button><button class="btn btn-outline" onclick="App.clearData()">Effacer toutes les données</button></div><div class="settings-section"><h2>À propos</h2><p>Version: 2.0.0</p><p>Stockage utilisé: ${Storage.getStorageSize()} KB</p></div></div>`; }
+    function renderAboutPage() { return `<div class="container"><div class="about-content"><h1 data-i18n="menu_about">À propos</h1><h2>Numérologie APP Mada</h2><p>Version 2.0.0</p><p>Application Premium de numérologie utilisant la méthode pythagoricienne.</p><p>Développé pour Madagascar avec amour ❤️</p></div></div>`; }
+    function initPageEvents(pageName) { if (pageName === 'new-analysis') { const form = document.getElementById('newAnalysisForm'); if (form) { form.addEventListener('submit', handleNewAnalysisSubmit); } } }
+    function handleNewAnalysisSubmit(e) { e.preventDefault(); const formData = new FormData(e.target); const data = Object.fromEntries(formData.entries()); const saved = Storage.saveAnalysis(data); showToast('Analyse enregistrée avec succès', 'success'); viewAnalysis(saved.id); }
+    function viewAnalysis(id) { const analysis = Storage.getAnalysisById(id); if (!analysis) return; const complete = NumerologyEngine.calculateCompleteAnalysis(analysis); const mainContent = document.getElementById('mainContent'); if (!mainContent) return; mainContent.innerHTML = `<div class="container"><div class="analysis-header"><button class="btn btn-secondary" onclick="App.loadPage('history')">← Retour</button><h1>${analysis.fullName}</h1></div><div class="numbers-grid"><div class="number-card"><div class="number-value">${complete.lifePath.number}</div><div class="number-label">Chemin de vie</div></div><div class="number-card"><div class="number-value">${complete.expression.reduced}</div><div class="number-label">Expression</div></div><div class="number-card"><div class="number-value">${complete.soulUrge.reduced}</div><div class="number-label">Âme</div></div><div class="number-card"><div class="number-value">${complete.personality.reduced}</div><div class="number-label">Personnalité</div></div></div><div class="card"><h2>Grille de Pythagore</h2>${Pythagore.renderGridHTML(Pythagore.createGrid(analysis.fullName, analysis.birthDate))}</div><div class="analysis-actions"><button class="btn btn-primary" onclick="App.exportAnalysis('${id}', 'pdf')">Exporter PDF</button><button class="btn btn-secondary" onclick="App.exportAnalysis('${id}', 'text')">Exporter TXT</button></div></div>`; }
+    function toggleFavorite(id) { if (Storage.isFavorite(id)) { Storage.removeFromFavorites(id); showToast('Retiré des favoris', 'info'); } else { Storage.addToFavorites(id); showToast('Ajouté aux favoris', 'success'); } updateCounts(); loadPage(currentPage); }
+    function deleteAnalysis(id) { if (confirm('Êtes-vous sûr de vouloir supprimer cette analyse ?')) { Storage.deleteAnalysis(id); showToast('Analyse supprimée', 'success'); updateCounts(); loadPage(currentPage); } }
+    function exportAnalysis(id, format) { const analysis = Storage.getAnalysisById(id); if (!analysis) return; const json = JSON.stringify(analysis, null, 2); Utils.downloadFile(json, `numerologie_${Utils.slugify(analysis.fullName)}_${Date.now()}.json`, 'application/json'); showToast('Analyse exportée', 'success'); }
+    function exportData() { const data = Storage.exportData(); Utils.downloadFile(data, `numerologie_backup_${Date.now()}.json`, 'application/json'); showToast('Données exportées', 'success'); }
+    function importData() { const input = document.createElement('input'); input.type = 'file'; input.accept = '.json'; input.onchange = async (e) => { const file = e.target.files[0]; if (file) { const content = await Utils.readFile(file); if (Storage.importData(content)) { showToast('Données importées avec succès', 'success'); updateCounts(); loadPage('home'); } else { showToast('Erreur lors de l\'import', 'error'); } } }; input.click(); }
+    function clearData() { if (confirm('Êtes-vous sûr de vouloir effacer toutes les données ?')) { Storage.clearAllData(); showToast('Toutes les données ont été effacées', 'success'); updateCounts(); loadPage('home'); } }
+    function updateCounts() { const historyCount = document.getElementById('historyCount'); const favoritesCount = document.getElementById('favoritesCount'); if (historyCount) { historyCount.textContent = Storage.getAnalyses().length; } if (favoritesCount) { favoritesCount.textContent = Storage.getFavorites().length; } }
+    function showToast(message, type = 'info') { const container = document.getElementById('toastContainer'); if (!container) return; const toast = document.createElement('div'); toast.className = `toast ${type}`; toast.innerHTML = `<span>${message}</span><button onclick="this.parentElement.remove()">×</button>`; container.appendChild(toast); setTimeout(() => { toast.remove(); }, 3000); }
+
+    return { init, loadPage, viewAnalysis, toggleFavorite, deleteAnalysis, exportAnalysis, exportData, importData, clearData };
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+    App.init();
+});
+    </script>
+</body>
+</html>
